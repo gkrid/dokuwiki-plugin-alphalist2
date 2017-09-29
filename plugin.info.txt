@@ -1,7 +1,7 @@
 base alphalist2
 author Szymon Olewniczak
-email (my first name) [at] imz [dot] re
-date 2015-02-25
+email solewniczak@rid.pl
+date 2017-09-29
 name alphalist2
-desc Simple plugin which allows display ordered and unorderd lists in alphabetical order.
+desc Display ordered and unorderd lists in alphabetical order
 url http://www.dokuwiki.org/plugin:alphalist2
