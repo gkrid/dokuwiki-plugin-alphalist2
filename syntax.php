@@ -9,7 +9,10 @@ if(!defined('DOKU_INC')) die();
 class syntax_plugin_alphalist2 extends DokuWiki_Syntax_Plugin {
 
     public function getType(){ return 'container'; }
-    public function getAllowedTypes() { return array('container'); }   
+    public function getAllowedTypes() {
+        global $PARSER_MODES;
+        return array_keys($PARSER_MODES);
+    }
     public function getSort(){ return 158; }
     public function connectTo($mode) { $this->Lexer->addEntryPattern('<alphalist.*?>(?=.*?</alphalist>)',$mode,'plugin_alphalist2'); }
     public function postConnect() { $this->Lexer->addExitPattern('</alphalist>','plugin_alphalist2'); }
