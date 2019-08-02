@@ -26,12 +26,12 @@ jQuery(function() {
 			lists[firstLetter].push($this);
 		});
 
-		var $closestHeaders = $list.closest(":has(:header)").find(":header:first");
-		if ($closestHeaders.length === 0) {
+		var $levelDiv = $list.closest("div[class^=level]");
+		if ($levelDiv.length === 0) {
 			var headerLevel = 1;
 		} else {
-			var closestHeader = $closestHeaders[0];
-			var headerLevel = parseInt(closestHeader.tagName.substring(1)) + 1;
+			var level =  $levelDiv.attr("class").substring("level".length);
+			var headerLevel = parseInt(level) + 1;
 		}
 
 		var $parent = $list.parent();
